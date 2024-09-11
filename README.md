@@ -1,7 +1,3 @@
-Here’s an updated `README.md` tailored specifically for your **Google Clone App** built using Flutter:
-
----
-
 # Google Clone App
 
 This repository contains the code for a **Google Clone App**, built using **Flutter**. The app mimics the functionality and design of Google's homepage and search results page, while integrating a custom-built search engine. It is fully responsive, ensuring a seamless user experience across various devices.
