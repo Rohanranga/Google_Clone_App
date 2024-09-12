@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_clone/Responsive/Mobile_Footer.dart';
-import 'package:google_clone/widgets/Translation_buttons.dart';
 import 'package:google_clone/widgets/search.dart';
-import 'package:google_clone/widgets/web/search_buttons.dart';
 import 'package:google_clone/colors.dart';
 
 class MobileScreenLayout extends StatelessWidget {
@@ -13,6 +11,7 @@ class MobileScreenLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         backgroundColor: backgroundColor,
         elevation: 0,
@@ -62,7 +61,7 @@ class MobileScreenLayout extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
+      bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(left: 5, right: 5),
         child: Column(
           children: [

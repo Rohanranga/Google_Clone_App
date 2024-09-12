@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_clone/colors.dart';
+import 'package:google_clone/screens/search_screen.dart';
 
 class WebHeader extends StatelessWidget {
   const WebHeader({super.key});
@@ -16,14 +16,14 @@ class WebHeader extends StatelessWidget {
         child: Row(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 28, right: 15, top: 4),
+              padding: const EdgeInsets.only(left: 28, right: 15, top: 4),
               child: Image.asset(
                 'assets/images/google-logo.png',
                 height: 30,
                 width: 92,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 27,
             ),
             Container(
@@ -37,15 +37,25 @@ class WebHeader extends StatelessWidget {
                 ),
               ),
               child: TextFormField(
+                onFieldSubmitted: (query) {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => SearchScreen(
+                        searchQuery: query,
+                        start: "0",
+                      ),
+                    ),
+                  );
+                },
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 14),
+                style: const TextStyle(fontSize: 14),
                 textAlignVertical: TextAlignVertical.center,
                 decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 16, bottom: 8),
+                  contentPadding: const EdgeInsets.only(left: 16, bottom: 8),
                   suffixIcon: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Container(
-                      constraints: BoxConstraints(
+                      constraints: const BoxConstraints(
                         maxWidth: 150,
                       ),
                       child: Row(
@@ -57,21 +67,21 @@ class WebHeader extends StatelessWidget {
                             width: 0.5,
                             color: Colors.grey,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           SvgPicture.asset('assets/images/mic-icon.svg',
                               height: 25, width: 05),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           SvgPicture.asset('assets/images/Icon.svg',
                               height: 25, width: 25),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Icon(Icons.search, color: blueColor),
-                          SizedBox(
+                          const Icon(Icons.search, color: blueColor),
+                          const SizedBox(
                             width: 10,
                           ),
                         ],

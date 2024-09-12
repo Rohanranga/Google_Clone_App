@@ -80,9 +80,6 @@ class _SearchResultComponentState extends State<SearchResultComponent> {
             fontSize: 14,
           ),
         ),
-        SizedBox(
-          height: 10,
-        )
       ],
     );
   }
