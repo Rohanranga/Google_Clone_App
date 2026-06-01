@@ -41,6 +41,8 @@ class _SearchResultComponentState extends State<SearchResultComponent> {
             onTap: () async {
               if (await canLaunchUrl(Uri.parse(widget.linkToGo))) {
                 await launchUrl(Uri.parse(widget.linkToGo));
+              } else {
+                throw 'Could not launch $widget.linkToGo';
               }
             },
             onHover: (hovering) {
